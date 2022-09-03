@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        main{
+            height: 100vh;
+            /* border: 10px solid black; */
+            background-image: url(img/grunge-paint-background_1409-1337.webp);
+            /* background-position: center;
+            background-size: cover; */
+        }
+        main>.row>header>.row>nav{
+            background-color: black;
+            /* height: 70px; */
+        }
+        main>.row>header>.row>nav>section{
+            /* background-color: aqua; */
+            display: flex;
+            justify-content: flex-start;
+        }
+        main>.row>header>.row>nav>section>span{
+            font-size: 30px;
+            transform: rotate(90deg);
+            padding-bottom: 15px;
+            cursor: pointer;
+            color: white;
+
+        }
+        .mobilemenu{
+            transform: translateX(-100%);
+            transition: 1s;
+        }
+        .drawer{
+            transform: translateX(0);
+        }
+        .mobilemenu>li{
+            list-style-type: none;
+            cursor: pointer;
+            border-bottom: 1px solid white;
+            font-size: 20px;
+            color: white;
+            text-transform: uppercase;
+            height:50px;
+            width: 80%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            padding-left: 10px;
+            transition: .4s;
+        }
+        .mobilemenu>li:hover{
+            background-color:gainsboro;
+            color: black;
+        }
+        .deskmenu>li{
+            list-style-type: none;
+            cursor: pointer;
+            /* border: 1px solid white; */
+            font-size: 20px;
+            color: white;
+            text-transform: uppercase;
+            height:50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            transition: .4s;
+        }
+        .deskmenu>li:hover{
+            background-color: gainsboro;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <main class="container-fluid container-xxl">
+        <div class="row p-0 m-0">
+            <header class="col-12 bg-danger">
+                <div class="row">
+                    <nav class="col-12">
+                        <section>
+                            <span onclick="hammenu()" class="mham d-md-none">|||</span>
+                        </section>
+                        <ul class="mobilemenu col-12 d-md-none p-0 m-0">
+                            <li>home</li>
+                            <li>about</li>
+                            <li>portfolio</li>
+                            <li>resume</li>
+                            <li>services</li>
+                            <li>contact</li>
+                        </ul>
+                        <ul class="deskmenu col-12 d-none d-md-flex p-0 m-0 ">
+                            <li class="col m-0">home</li>
+                            <li class="col m-0">about</li>
+                            <li class="col m-0">portfolio</li>
+                            <li class="col m-0">resume</li>
+                            <li class="col m-0">services</li>
+                            <li class="col m-0">contact</li>
+                        </ul>
+                 
+                    </nav>
+                </div>
+            </header>
+        </div>
+    </main>
+</body>
+<script>
+    
+    function hammenu(){
+        document.getElementsByClassName('mobilemenu')[0].classList.toggle('drawer')
+    }
+</script>
+</html>
